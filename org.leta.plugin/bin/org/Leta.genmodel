@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.leta.plugin/src-gen"
+    editDirectory="/org.leta.plugin.edit/src" editorDirectory="/org.leta.plugin.editor/src"
+    modelPluginID="org.leta.plugin" forceOverwrite="true" modelName="Leta" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="org.leta.plugin.edit" editorPluginID="org.leta.plugin.editor">
+  <genPackages prefix="Leta" basePackage="org" disposableProviderFactory="true" ecorePackage="Leta.ecore#/">
+    <genClasses ecoreClass="Leta.ecore#//Leta">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Leta/tp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Leta/tc"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//TestCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//TestCase/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TestCase/v"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TestCase/w"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TestCase/s"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//VerifyClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//VerifyClause/fc"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//WhenClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//WhenClause/fc"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//SetClause"/>
+    <genClasses ecoreClass="Leta.ecore#//factComposite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//factComposite/f"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//factComposite/fo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//factComposite/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//factComposite/fc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//factComposite/fc1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//factComposite/fc2"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Fact">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Fact/termComposite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Fact/complement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Fact/termComposite2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Fact/factExt"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//FactExt">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FactExt/complement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FactExt/termComposite"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FactExt/factExt"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//TermComposite">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermComposite/quantifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermComposite/term"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermComposite/termInstance"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermComposite/termWithAssociation"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Term">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Term/id"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//TermInstance">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermInstance/term"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//TermInstance/notEqualOperator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//TermInstance/stringLiteral"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermInstance/relationalOperator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//TermInstance/otherLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//TermWithAssociation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermWithAssociation/t"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//TermWithAssociation/ro"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//TermWithAssociation/index"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Quantifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Quantifier/v"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Quantifier/v1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Quantifier/v2"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Complement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//Complement/id"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Formula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Formula/fi"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Formula/fe"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//FormulaExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaExpression/fi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//FormulaExpression/mo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaExpression/fe"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaExpression/fe1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaExpression/fe2"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//FormulaItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaItem/t"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaItem/ti"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//FormulaItem/twa"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//RelationalOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//RelationalOperator/o"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//RelationalOperator/neo"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//Set">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Set/s"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//Set/l"/>
+    </genClasses>
+    <genClasses ecoreClass="Leta.ecore#//List">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//List/sl"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Leta.ecore#//List/ol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Leta.ecore#//List/l"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

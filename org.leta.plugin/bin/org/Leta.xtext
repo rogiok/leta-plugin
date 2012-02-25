@@ -1,0 +1,119 @@
+grammar org.Leta with org.eclipse.xtext.common.Terminals
+
+generate leta "http://www.Leta.org"
+
+Leta:
+	tp=TestPackage? tc+=TestCase+;
+
+TestCase:
+	'Test' id=ID v=VerifyClause w=WhenClause s=SetClause?;
+
+VerifyClause:
+	'Verify' fc=factComposite;
+
+WhenClause:
+	'When' fc=factComposite;
+
+SetClause:
+	{Set} 'Set' '{' s=Set? '}';
+
+factComposite:
+	(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)?
+	| '(' fc1=factComposite ')' (op=logicalOperator fc2=factComposite)?;
+
+logicalOperator:
+	'And'
+	| 'Or';
+
+Fact:
+	termComposite=TermComposite complement=Complement (termComposite2=TermComposite (factExt=FactExt)?)?;
+
+FactExt:
+	complement=Complement (termComposite=TermComposite (factExt=FactExt)?)?;
+
+TermComposite:
+	quantifier=Quantifier? (term=Term | termInstance=TermInstance | termWithAssociation=TermWithAssociation);
+
+Term:
+	id=ID;
+
+TermInstance:
+	term=Term notEqualOperator=NotEqualOperator? stringLiteral=StringLiteral
+	| term=Term relationalOperator=RelationalOperator? otherLiteral=OtherLiteral;
+
+TermWithAssociation:
+	t=Term ro=RelationalOperator? '@' index=INT;
+
+Quantifier:
+	'atLeast' v=INT
+	| 'atMost' v=INT
+	| 'exactly' v=INT
+	| 'atLeastAndAtMost' v1=INT v2=INT;
+
+Complement:
+	id=ID;
+
+Formula:
+	fi=FormulaItem '=' fe=FormulaExpression;
+
+FormulaExpression:
+	fi=FormulaItem (mo=MathOperator fe=FormulaExpression)?
+	| '(' fe1=FormulaExpression ')' (mo=MathOperator fe2=FormulaExpression)?;
+
+FormulaItem:
+	(t=Term | ti=TermInstance | twa=TermWithAssociation);
+
+MathOperator:
+	sum='+'
+	| subtract='-'
+	| divide='/'
+	| multiply='*'
+	| r='%'
+	| p='**';
+
+RelationalOperator:
+	o='>'
+	| o='<'
+	| o='>='
+	| o='<='
+	| neo=NotEqualOperator;
+
+NotEqualOperator:
+	ne='!=';
+
+Set:
+	'{' l=List '}' (',' s=Set)?;
+
+List:
+	(sl=StringLiteral | ol=OtherLiteral) (',' l=List)?;
+
+StringLiteral:
+	STRING
+	| 'null';
+
+OtherLiteral:
+	FLOAT
+	| MINUS_FLOAT
+	| INT
+	| MINUS_INTEGER
+	| DATE_TIME;
+
+TestPackage:
+	'Package' ID ('.' ID)*;
+
+terminal fragment DIGIT:
+	'0'..'9';
+
+terminal MINUS_INTEGER:
+	'-' DIGIT+;
+
+terminal FLOAT:
+	DIGIT+ '.' DIGIT*;
+
+terminal MINUS_FLOAT:
+	'-' DIGIT+ '.' DIGIT*;
+
+terminal DATE_TIME:
+	'[' DIGIT+ ('-' DIGIT+ ('-' DIGIT+)?)? (' ' DIGIT+ ':' DIGIT+ (':' DIGIT+ ('.' DIGIT+)?)? ('AM' | 'PM')? (('+' | '-')
+	DIGIT+ ':' DIGIT+)?)? ']';
+

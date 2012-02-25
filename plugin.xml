@@ -49,17 +49,27 @@
             class="org.eclipse.ui.texteditor.ResourceMarkerAnnotationModelFactory">
       </factory>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.ide.markerResolution">
+      <markerResolutionGenerator
+      		markerType="org.eclipse.core.resources.problemmarker"
+            class="org.leta.plugin.editor.QuickFixer">
+      </markerResolutionGenerator>
+   </extension>
 
 	<!--
    <extension
-         id="LetaTextMarker"
+         id="LetaPlugin.LetaTextMarker"
+         name="LetaPlugin.LetaTextMarker"
          point="org.eclipse.core.resources.markers">
          <super type="org.eclipse.core.resources.textmarker"/>
          <super type="org.eclipse.core.resources.marker"/>
          <persistent value="true"/>
-         <attribute name="description"/>
+         <attribute name="syntaxMessage"/>
    </extension>
    
+         <attribute name="description"/>
    <extension
    		 id="LetaAnnotationSpecification"
          point="org.eclipse.ui.editors.markerAnnotationSpecification">

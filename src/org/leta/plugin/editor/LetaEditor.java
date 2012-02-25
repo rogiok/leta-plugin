@@ -7,6 +7,8 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.editors.text.TextEditor;
 
 /**
@@ -25,13 +27,13 @@ public class LetaEditor extends TextEditor {
     @Override
     protected void initializeEditor() {
 	super.initializeEditor();
-
+	
 	// Defines the syntax highlight for editor
-	this.setSourceViewerConfiguration(new EditorConfiguration());
+	this.setSourceViewerConfiguration(new ViewerConfiguration());
 	// this.setDocumentProvider(new DocumentProvider());
 
 	LetaConfiguration.getInstance().setLetaEditor(this);
-	
+
 	// Add a resource listener for leta files
 	IResourceChangeListener rcl = new IResourceChangeListener() {
 	    public void resourceChanged(IResourceChangeEvent event) {
@@ -57,7 +59,11 @@ public class LetaEditor extends TextEditor {
     @Override
     public void doSave(IProgressMonitor progressMonitor) {
 	super.doSave(progressMonitor);
+    }
 
+    @Override
+    public void init(IEditorSite site, IEditorInput input) throws PartInitException {
+	super.init(site, input);
     }
 
     /*
