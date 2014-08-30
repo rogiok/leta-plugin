@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.leta.LetaPackage;
+import org.leta.NotEqualOperator;
 import org.leta.RelationalOperator;
 import org.leta.Term;
 import org.leta.TermInstance;
@@ -49,24 +50,14 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
   protected Term term;
 
   /**
-   * The default value of the '{@link #getNotEqualOperator() <em>Not Equal Operator</em>}' attribute.
+   * The cached value of the '{@link #getNotEqualOperator() <em>Not Equal Operator</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNotEqualOperator()
    * @generated
    * @ordered
    */
-  protected static final String NOT_EQUAL_OPERATOR_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNotEqualOperator() <em>Not Equal Operator</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNotEqualOperator()
-   * @generated
-   * @ordered
-   */
-  protected String notEqualOperator = NOT_EQUAL_OPERATOR_EDEFAULT;
+  protected NotEqualOperator notEqualOperator;
 
   /**
    * The default value of the '{@link #getStringLiteral() <em>String Literal</em>}' attribute.
@@ -192,7 +183,7 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNotEqualOperator()
+  public NotEqualOperator getNotEqualOperator()
   {
     return notEqualOperator;
   }
@@ -202,12 +193,37 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNotEqualOperator(String newNotEqualOperator)
+  public NotificationChain basicSetNotEqualOperator(NotEqualOperator newNotEqualOperator, NotificationChain msgs)
   {
-    String oldNotEqualOperator = notEqualOperator;
+    NotEqualOperator oldNotEqualOperator = notEqualOperator;
     notEqualOperator = newNotEqualOperator;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR, oldNotEqualOperator, notEqualOperator));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR, oldNotEqualOperator, newNotEqualOperator);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNotEqualOperator(NotEqualOperator newNotEqualOperator)
+  {
+    if (newNotEqualOperator != notEqualOperator)
+    {
+      NotificationChain msgs = null;
+      if (notEqualOperator != null)
+        msgs = ((InternalEObject)notEqualOperator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR, null, msgs);
+      if (newNotEqualOperator != null)
+        msgs = ((InternalEObject)newNotEqualOperator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR, null, msgs);
+      msgs = basicSetNotEqualOperator(newNotEqualOperator, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR, newNotEqualOperator, newNotEqualOperator));
   }
 
   /**
@@ -316,6 +332,8 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
     {
       case LetaPackage.TERM_INSTANCE__TERM:
         return basicSetTerm(null, msgs);
+      case LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR:
+        return basicSetNotEqualOperator(null, msgs);
       case LetaPackage.TERM_INSTANCE__RELATIONAL_OPERATOR:
         return basicSetRelationalOperator(null, msgs);
     }
@@ -360,7 +378,7 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
         setTerm((Term)newValue);
         return;
       case LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR:
-        setNotEqualOperator((String)newValue);
+        setNotEqualOperator((NotEqualOperator)newValue);
         return;
       case LetaPackage.TERM_INSTANCE__STRING_LITERAL:
         setStringLiteral((String)newValue);
@@ -389,7 +407,7 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
         setTerm((Term)null);
         return;
       case LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR:
-        setNotEqualOperator(NOT_EQUAL_OPERATOR_EDEFAULT);
+        setNotEqualOperator((NotEqualOperator)null);
         return;
       case LetaPackage.TERM_INSTANCE__STRING_LITERAL:
         setStringLiteral(STRING_LITERAL_EDEFAULT);
@@ -417,7 +435,7 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
       case LetaPackage.TERM_INSTANCE__TERM:
         return term != null;
       case LetaPackage.TERM_INSTANCE__NOT_EQUAL_OPERATOR:
-        return NOT_EQUAL_OPERATOR_EDEFAULT == null ? notEqualOperator != null : !NOT_EQUAL_OPERATOR_EDEFAULT.equals(notEqualOperator);
+        return notEqualOperator != null;
       case LetaPackage.TERM_INSTANCE__STRING_LITERAL:
         return STRING_LITERAL_EDEFAULT == null ? stringLiteral != null : !STRING_LITERAL_EDEFAULT.equals(stringLiteral);
       case LetaPackage.TERM_INSTANCE__RELATIONAL_OPERATOR:
@@ -439,9 +457,7 @@ public class TermInstanceImpl extends MinimalEObjectImpl.Container implements Te
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (notEqualOperator: ");
-    result.append(notEqualOperator);
-    result.append(", stringLiteral: ");
+    result.append(" (stringLiteral: ");
     result.append(stringLiteral);
     result.append(", otherLiteral: ");
     result.append(otherLiteral);

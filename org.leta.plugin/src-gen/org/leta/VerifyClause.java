@@ -34,12 +34,12 @@ public interface VerifyClause extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Fc</em>' containment reference.
-   * @see #setFc(factComposite)
+   * @see #setFc(FactComposite)
    * @see org.leta.LetaPackage#getVerifyClause_Fc()
    * @model containment="true"
    * @generated
    */
-  factComposite getFc();
+  FactComposite getFc();
 
   /**
    * Sets the value of the '{@link org.leta.VerifyClause#getFc <em>Fc</em>}' containment reference.
@@ -49,6 +49,6 @@ public interface VerifyClause extends EObject
    * @see #getFc()
    * @generated
    */
-  void setFc(factComposite value);
+  void setFc(FactComposite value);
 
 } // VerifyClause

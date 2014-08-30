@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.leta.FactComposite;
 import org.leta.LetaPackage;
 import org.leta.VerifyClause;
-import org.leta.factComposite;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,7 +41,7 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
    * @generated
    * @ordered
    */
-  protected factComposite fc;
+  protected FactComposite fc;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
    * <!-- end-user-doc -->
    * @generated
    */
-  public factComposite getFc()
+  public FactComposite getFc()
   {
     return fc;
   }
@@ -79,9 +79,9 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetFc(factComposite newFc, NotificationChain msgs)
+  public NotificationChain basicSetFc(FactComposite newFc, NotificationChain msgs)
   {
-    factComposite oldFc = fc;
+    FactComposite oldFc = fc;
     fc = newFc;
     if (eNotificationRequired())
     {
@@ -96,7 +96,7 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFc(factComposite newFc)
+  public void setFc(FactComposite newFc)
   {
     if (newFc != fc)
     {
@@ -155,7 +155,7 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
     switch (featureID)
     {
       case LetaPackage.VERIFY_CLAUSE__FC:
-        setFc((factComposite)newValue);
+        setFc((FactComposite)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +172,7 @@ public class VerifyClauseImpl extends MinimalEObjectImpl.Container implements Ve
     switch (featureID)
     {
       case LetaPackage.VERIFY_CLAUSE__FC:
-        setFc((factComposite)null);
+        setFc((FactComposite)null);
         return;
     }
     super.eUnset(featureID);

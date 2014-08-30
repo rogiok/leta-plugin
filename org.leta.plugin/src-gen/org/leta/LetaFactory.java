@@ -71,13 +71,13 @@ public interface LetaFactory extends EFactory
   SetClause createSetClause();
 
   /**
-   * Returns a new object of class '<em>fact Composite</em>'.
+   * Returns a new object of class '<em>Fact Composite</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>fact Composite</em>'.
+   * @return a new object of class '<em>Fact Composite</em>'.
    * @generated
    */
-  factComposite createfactComposite();
+  FactComposite createFactComposite();
 
   /**
    * Returns a new object of class '<em>Fact</em>'.
@@ -179,6 +179,15 @@ public interface LetaFactory extends EFactory
   FormulaItem createFormulaItem();
 
   /**
+   * Returns a new object of class '<em>Math Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Math Operator</em>'.
+   * @generated
+   */
+  MathOperator createMathOperator();
+
+  /**
    * Returns a new object of class '<em>Relational Operator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -186,6 +195,15 @@ public interface LetaFactory extends EFactory
    * @generated
    */
   RelationalOperator createRelationalOperator();
+
+  /**
+   * Returns a new object of class '<em>Not Equal Operator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not Equal Operator</em>'.
+   * @generated
+   */
+  NotEqualOperator createNotEqualOperator();
 
   /**
    * Returns a new object of class '<em>Set</em>'.

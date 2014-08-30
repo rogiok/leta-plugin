@@ -35,4 +35,5 @@ Export-Package: org,
  org.validation,
  org.scoping,
  org.generator,
- org.formatting
+ org.formatting,
+ org.parser.antlr.lexer

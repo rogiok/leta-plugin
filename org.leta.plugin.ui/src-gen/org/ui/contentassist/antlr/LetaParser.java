@@ -136,11 +136,18 @@ public class LetaParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFormulaItemAccess().getTAssignment_0(), "rule__FormulaItem__TAssignment_0");
 					put(grammarAccess.getFormulaItemAccess().getTiAssignment_1(), "rule__FormulaItem__TiAssignment_1");
 					put(grammarAccess.getFormulaItemAccess().getTwaAssignment_2(), "rule__FormulaItem__TwaAssignment_2");
+					put(grammarAccess.getMathOperatorAccess().getSumAssignment_0(), "rule__MathOperator__SumAssignment_0");
+					put(grammarAccess.getMathOperatorAccess().getSubtractAssignment_1(), "rule__MathOperator__SubtractAssignment_1");
+					put(grammarAccess.getMathOperatorAccess().getDivideAssignment_2(), "rule__MathOperator__DivideAssignment_2");
+					put(grammarAccess.getMathOperatorAccess().getMultiplyAssignment_3(), "rule__MathOperator__MultiplyAssignment_3");
+					put(grammarAccess.getMathOperatorAccess().getRAssignment_4(), "rule__MathOperator__RAssignment_4");
+					put(grammarAccess.getMathOperatorAccess().getPAssignment_5(), "rule__MathOperator__PAssignment_5");
 					put(grammarAccess.getRelationalOperatorAccess().getOAssignment_0(), "rule__RelationalOperator__OAssignment_0");
 					put(grammarAccess.getRelationalOperatorAccess().getOAssignment_1(), "rule__RelationalOperator__OAssignment_1");
 					put(grammarAccess.getRelationalOperatorAccess().getOAssignment_2(), "rule__RelationalOperator__OAssignment_2");
 					put(grammarAccess.getRelationalOperatorAccess().getOAssignment_3(), "rule__RelationalOperator__OAssignment_3");
 					put(grammarAccess.getRelationalOperatorAccess().getNeoAssignment_4(), "rule__RelationalOperator__NeoAssignment_4");
+					put(grammarAccess.getNotEqualOperatorAccess().getNeAssignment(), "rule__NotEqualOperator__NeAssignment");
 					put(grammarAccess.getSetAccess().getLAssignment_1(), "rule__Set__LAssignment_1");
 					put(grammarAccess.getSetAccess().getSAssignment_3_1(), "rule__Set__SAssignment_3_1");
 					put(grammarAccess.getListAccess().getSlAssignment_0_0(), "rule__List__SlAssignment_0_0");

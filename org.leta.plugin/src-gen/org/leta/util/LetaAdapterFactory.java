@@ -103,9 +103,9 @@ public class LetaAdapterFactory extends AdapterFactoryImpl
         return createSetClauseAdapter();
       }
       @Override
-      public Adapter casefactComposite(factComposite object)
+      public Adapter caseFactComposite(FactComposite object)
       {
-        return createfactCompositeAdapter();
+        return createFactCompositeAdapter();
       }
       @Override
       public Adapter caseFact(Fact object)
@@ -163,9 +163,19 @@ public class LetaAdapterFactory extends AdapterFactoryImpl
         return createFormulaItemAdapter();
       }
       @Override
+      public Adapter caseMathOperator(MathOperator object)
+      {
+        return createMathOperatorAdapter();
+      }
+      @Override
       public Adapter caseRelationalOperator(RelationalOperator object)
       {
         return createRelationalOperatorAdapter();
+      }
+      @Override
+      public Adapter caseNotEqualOperator(NotEqualOperator object)
+      {
+        return createNotEqualOperatorAdapter();
       }
       @Override
       public Adapter caseSet(Set object)
@@ -275,16 +285,16 @@ public class LetaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.leta.factComposite <em>fact Composite</em>}'.
+   * Creates a new adapter for an object of class '{@link org.leta.FactComposite <em>Fact Composite</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.leta.factComposite
+   * @see org.leta.FactComposite
    * @generated
    */
-  public Adapter createfactCompositeAdapter()
+  public Adapter createFactCompositeAdapter()
   {
     return null;
   }
@@ -455,6 +465,21 @@ public class LetaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.leta.MathOperator <em>Math Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.leta.MathOperator
+   * @generated
+   */
+  public Adapter createMathOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.leta.RelationalOperator <em>Relational Operator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -465,6 +490,21 @@ public class LetaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRelationalOperatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.leta.NotEqualOperator <em>Not Equal Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.leta.NotEqualOperator
+   * @generated
+   */
+  public Adapter createNotEqualOperatorAdapter()
   {
     return null;
   }

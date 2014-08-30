@@ -227,11 +227,11 @@ public interface LetaPackage extends EPackage
   int SET_CLAUSE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.leta.impl.factCompositeImpl <em>fact Composite</em>}' class.
+   * The meta object id for the '{@link org.leta.impl.FactCompositeImpl <em>Fact Composite</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.leta.impl.factCompositeImpl
-   * @see org.leta.impl.LetaPackageImpl#getfactComposite()
+   * @see org.leta.impl.FactCompositeImpl
+   * @see org.leta.impl.LetaPackageImpl#getFactComposite()
    * @generated
    */
   int FACT_COMPOSITE = 5;
@@ -291,7 +291,7 @@ public interface LetaPackage extends EPackage
   int FACT_COMPOSITE__FC2 = 5;
 
   /**
-   * The number of structural features of the '<em>fact Composite</em>' class.
+   * The number of structural features of the '<em>Fact Composite</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -503,7 +503,7 @@ public interface LetaPackage extends EPackage
   int TERM_INSTANCE__TERM = 0;
 
   /**
-   * The feature id for the '<em><b>Not Equal Operator</b></em>' attribute.
+   * The feature id for the '<em><b>Not Equal Operator</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -724,7 +724,7 @@ public interface LetaPackage extends EPackage
   int FORMULA_EXPRESSION__FI = 0;
 
   /**
-   * The feature id for the '<em><b>Mo</b></em>' attribute.
+   * The feature id for the '<em><b>Mo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -815,6 +815,79 @@ public interface LetaPackage extends EPackage
   int FORMULA_ITEM_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.leta.impl.MathOperatorImpl <em>Math Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.leta.impl.MathOperatorImpl
+   * @see org.leta.impl.LetaPackageImpl#getMathOperator()
+   * @generated
+   */
+  int MATH_OPERATOR = 17;
+
+  /**
+   * The feature id for the '<em><b>Sum</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__SUM = 0;
+
+  /**
+   * The feature id for the '<em><b>Subtract</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__SUBTRACT = 1;
+
+  /**
+   * The feature id for the '<em><b>Divide</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__DIVIDE = 2;
+
+  /**
+   * The feature id for the '<em><b>Multiply</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__MULTIPLY = 3;
+
+  /**
+   * The feature id for the '<em><b>R</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__R = 4;
+
+  /**
+   * The feature id for the '<em><b>P</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR__P = 5;
+
+  /**
+   * The number of structural features of the '<em>Math Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MATH_OPERATOR_FEATURE_COUNT = 6;
+
+  /**
    * The meta object id for the '{@link org.leta.impl.RelationalOperatorImpl <em>Relational Operator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -822,7 +895,7 @@ public interface LetaPackage extends EPackage
    * @see org.leta.impl.LetaPackageImpl#getRelationalOperator()
    * @generated
    */
-  int RELATIONAL_OPERATOR = 17;
+  int RELATIONAL_OPERATOR = 18;
 
   /**
    * The feature id for the '<em><b>O</b></em>' attribute.
@@ -834,7 +907,7 @@ public interface LetaPackage extends EPackage
   int RELATIONAL_OPERATOR__O = 0;
 
   /**
-   * The feature id for the '<em><b>Neo</b></em>' attribute.
+   * The feature id for the '<em><b>Neo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -852,6 +925,34 @@ public interface LetaPackage extends EPackage
   int RELATIONAL_OPERATOR_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link org.leta.impl.NotEqualOperatorImpl <em>Not Equal Operator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.leta.impl.NotEqualOperatorImpl
+   * @see org.leta.impl.LetaPackageImpl#getNotEqualOperator()
+   * @generated
+   */
+  int NOT_EQUAL_OPERATOR = 19;
+
+  /**
+   * The feature id for the '<em><b>Ne</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EQUAL_OPERATOR__NE = 0;
+
+  /**
+   * The number of structural features of the '<em>Not Equal Operator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EQUAL_OPERATOR_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.leta.impl.SetImpl <em>Set</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -859,7 +960,7 @@ public interface LetaPackage extends EPackage
    * @see org.leta.impl.LetaPackageImpl#getSet()
    * @generated
    */
-  int SET = 18;
+  int SET = 20;
 
   /**
    * The feature id for the '<em><b>S</b></em>' containment reference.
@@ -896,7 +997,7 @@ public interface LetaPackage extends EPackage
    * @see org.leta.impl.LetaPackageImpl#getList()
    * @generated
    */
-  int LIST = 19;
+  int LIST = 21;
 
   /**
    * The feature id for the '<em><b>Sl</b></em>' attribute.
@@ -1074,80 +1175,80 @@ public interface LetaPackage extends EPackage
   EClass getSetClause();
 
   /**
-   * Returns the meta object for class '{@link org.leta.factComposite <em>fact Composite</em>}'.
+   * Returns the meta object for class '{@link org.leta.FactComposite <em>Fact Composite</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>fact Composite</em>'.
-   * @see org.leta.factComposite
+   * @return the meta object for class '<em>Fact Composite</em>'.
+   * @see org.leta.FactComposite
    * @generated
    */
-  EClass getfactComposite();
+  EClass getFactComposite();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.leta.factComposite#getF <em>F</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FactComposite#getF <em>F</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>F</em>'.
-   * @see org.leta.factComposite#getF()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getF()
+   * @see #getFactComposite()
    * @generated
    */
-  EReference getfactComposite_F();
+  EReference getFactComposite_F();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.leta.factComposite#getFo <em>Fo</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FactComposite#getFo <em>Fo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Fo</em>'.
-   * @see org.leta.factComposite#getFo()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getFo()
+   * @see #getFactComposite()
    * @generated
    */
-  EReference getfactComposite_Fo();
+  EReference getFactComposite_Fo();
 
   /**
-   * Returns the meta object for the attribute '{@link org.leta.factComposite#getOp <em>Op</em>}'.
+   * Returns the meta object for the attribute '{@link org.leta.FactComposite#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.leta.factComposite#getOp()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getOp()
+   * @see #getFactComposite()
    * @generated
    */
-  EAttribute getfactComposite_Op();
+  EAttribute getFactComposite_Op();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.leta.factComposite#getFc <em>Fc</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FactComposite#getFc <em>Fc</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Fc</em>'.
-   * @see org.leta.factComposite#getFc()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getFc()
+   * @see #getFactComposite()
    * @generated
    */
-  EReference getfactComposite_Fc();
+  EReference getFactComposite_Fc();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.leta.factComposite#getFc1 <em>Fc1</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FactComposite#getFc1 <em>Fc1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Fc1</em>'.
-   * @see org.leta.factComposite#getFc1()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getFc1()
+   * @see #getFactComposite()
    * @generated
    */
-  EReference getfactComposite_Fc1();
+  EReference getFactComposite_Fc1();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.leta.factComposite#getFc2 <em>Fc2</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FactComposite#getFc2 <em>Fc2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Fc2</em>'.
-   * @see org.leta.factComposite#getFc2()
-   * @see #getfactComposite()
+   * @see org.leta.FactComposite#getFc2()
+   * @see #getFactComposite()
    * @generated
    */
-  EReference getfactComposite_Fc2();
+  EReference getFactComposite_Fc2();
 
   /**
    * Returns the meta object for class '{@link org.leta.Fact <em>Fact</em>}'.
@@ -1343,15 +1444,15 @@ public interface LetaPackage extends EPackage
   EReference getTermInstance_Term();
 
   /**
-   * Returns the meta object for the attribute '{@link org.leta.TermInstance#getNotEqualOperator <em>Not Equal Operator</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.TermInstance#getNotEqualOperator <em>Not Equal Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Not Equal Operator</em>'.
+   * @return the meta object for the containment reference '<em>Not Equal Operator</em>'.
    * @see org.leta.TermInstance#getNotEqualOperator()
    * @see #getTermInstance()
    * @generated
    */
-  EAttribute getTermInstance_NotEqualOperator();
+  EReference getTermInstance_NotEqualOperator();
 
   /**
    * Returns the meta object for the attribute '{@link org.leta.TermInstance#getStringLiteral <em>String Literal</em>}'.
@@ -1547,15 +1648,15 @@ public interface LetaPackage extends EPackage
   EReference getFormulaExpression_Fi();
 
   /**
-   * Returns the meta object for the attribute '{@link org.leta.FormulaExpression#getMo <em>Mo</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.FormulaExpression#getMo <em>Mo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Mo</em>'.
+   * @return the meta object for the containment reference '<em>Mo</em>'.
    * @see org.leta.FormulaExpression#getMo()
    * @see #getFormulaExpression()
    * @generated
    */
-  EAttribute getFormulaExpression_Mo();
+  EReference getFormulaExpression_Mo();
 
   /**
    * Returns the meta object for the containment reference '{@link org.leta.FormulaExpression#getFe <em>Fe</em>}'.
@@ -1634,6 +1735,82 @@ public interface LetaPackage extends EPackage
   EReference getFormulaItem_Twa();
 
   /**
+   * Returns the meta object for class '{@link org.leta.MathOperator <em>Math Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Math Operator</em>'.
+   * @see org.leta.MathOperator
+   * @generated
+   */
+  EClass getMathOperator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getSum <em>Sum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sum</em>'.
+   * @see org.leta.MathOperator#getSum()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_Sum();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getSubtract <em>Subtract</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Subtract</em>'.
+   * @see org.leta.MathOperator#getSubtract()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_Subtract();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getDivide <em>Divide</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Divide</em>'.
+   * @see org.leta.MathOperator#getDivide()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_Divide();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getMultiply <em>Multiply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Multiply</em>'.
+   * @see org.leta.MathOperator#getMultiply()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_Multiply();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getR <em>R</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>R</em>'.
+   * @see org.leta.MathOperator#getR()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_R();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.MathOperator#getP <em>P</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>P</em>'.
+   * @see org.leta.MathOperator#getP()
+   * @see #getMathOperator()
+   * @generated
+   */
+  EAttribute getMathOperator_P();
+
+  /**
    * Returns the meta object for class '{@link org.leta.RelationalOperator <em>Relational Operator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1655,15 +1832,36 @@ public interface LetaPackage extends EPackage
   EAttribute getRelationalOperator_O();
 
   /**
-   * Returns the meta object for the attribute '{@link org.leta.RelationalOperator#getNeo <em>Neo</em>}'.
+   * Returns the meta object for the containment reference '{@link org.leta.RelationalOperator#getNeo <em>Neo</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Neo</em>'.
+   * @return the meta object for the containment reference '<em>Neo</em>'.
    * @see org.leta.RelationalOperator#getNeo()
    * @see #getRelationalOperator()
    * @generated
    */
-  EAttribute getRelationalOperator_Neo();
+  EReference getRelationalOperator_Neo();
+
+  /**
+   * Returns the meta object for class '{@link org.leta.NotEqualOperator <em>Not Equal Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not Equal Operator</em>'.
+   * @see org.leta.NotEqualOperator
+   * @generated
+   */
+  EClass getNotEqualOperator();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.leta.NotEqualOperator#getNe <em>Ne</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ne</em>'.
+   * @see org.leta.NotEqualOperator#getNe()
+   * @see #getNotEqualOperator()
+   * @generated
+   */
+  EAttribute getNotEqualOperator_Ne();
 
   /**
    * Returns the meta object for class '{@link org.leta.Set <em>Set</em>}'.
@@ -1878,14 +2076,14 @@ public interface LetaPackage extends EPackage
     EClass SET_CLAUSE = eINSTANCE.getSetClause();
 
     /**
-     * The meta object literal for the '{@link org.leta.impl.factCompositeImpl <em>fact Composite</em>}' class.
+     * The meta object literal for the '{@link org.leta.impl.FactCompositeImpl <em>Fact Composite</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.leta.impl.factCompositeImpl
-     * @see org.leta.impl.LetaPackageImpl#getfactComposite()
+     * @see org.leta.impl.FactCompositeImpl
+     * @see org.leta.impl.LetaPackageImpl#getFactComposite()
      * @generated
      */
-    EClass FACT_COMPOSITE = eINSTANCE.getfactComposite();
+    EClass FACT_COMPOSITE = eINSTANCE.getFactComposite();
 
     /**
      * The meta object literal for the '<em><b>F</b></em>' containment reference feature.
@@ -1893,7 +2091,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FACT_COMPOSITE__F = eINSTANCE.getfactComposite_F();
+    EReference FACT_COMPOSITE__F = eINSTANCE.getFactComposite_F();
 
     /**
      * The meta object literal for the '<em><b>Fo</b></em>' containment reference feature.
@@ -1901,7 +2099,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FACT_COMPOSITE__FO = eINSTANCE.getfactComposite_Fo();
+    EReference FACT_COMPOSITE__FO = eINSTANCE.getFactComposite_Fo();
 
     /**
      * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
@@ -1909,7 +2107,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FACT_COMPOSITE__OP = eINSTANCE.getfactComposite_Op();
+    EAttribute FACT_COMPOSITE__OP = eINSTANCE.getFactComposite_Op();
 
     /**
      * The meta object literal for the '<em><b>Fc</b></em>' containment reference feature.
@@ -1917,7 +2115,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FACT_COMPOSITE__FC = eINSTANCE.getfactComposite_Fc();
+    EReference FACT_COMPOSITE__FC = eINSTANCE.getFactComposite_Fc();
 
     /**
      * The meta object literal for the '<em><b>Fc1</b></em>' containment reference feature.
@@ -1925,7 +2123,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FACT_COMPOSITE__FC1 = eINSTANCE.getfactComposite_Fc1();
+    EReference FACT_COMPOSITE__FC1 = eINSTANCE.getFactComposite_Fc1();
 
     /**
      * The meta object literal for the '<em><b>Fc2</b></em>' containment reference feature.
@@ -1933,7 +2131,7 @@ public interface LetaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FACT_COMPOSITE__FC2 = eINSTANCE.getfactComposite_Fc2();
+    EReference FACT_COMPOSITE__FC2 = eINSTANCE.getFactComposite_Fc2();
 
     /**
      * The meta object literal for the '{@link org.leta.impl.FactImpl <em>Fact</em>}' class.
@@ -2090,12 +2288,12 @@ public interface LetaPackage extends EPackage
     EReference TERM_INSTANCE__TERM = eINSTANCE.getTermInstance_Term();
 
     /**
-     * The meta object literal for the '<em><b>Not Equal Operator</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Not Equal Operator</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TERM_INSTANCE__NOT_EQUAL_OPERATOR = eINSTANCE.getTermInstance_NotEqualOperator();
+    EReference TERM_INSTANCE__NOT_EQUAL_OPERATOR = eINSTANCE.getTermInstance_NotEqualOperator();
 
     /**
      * The meta object literal for the '<em><b>String Literal</b></em>' attribute feature.
@@ -2252,12 +2450,12 @@ public interface LetaPackage extends EPackage
     EReference FORMULA_EXPRESSION__FI = eINSTANCE.getFormulaExpression_Fi();
 
     /**
-     * The meta object literal for the '<em><b>Mo</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Mo</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FORMULA_EXPRESSION__MO = eINSTANCE.getFormulaExpression_Mo();
+    EReference FORMULA_EXPRESSION__MO = eINSTANCE.getFormulaExpression_Mo();
 
     /**
      * The meta object literal for the '<em><b>Fe</b></em>' containment reference feature.
@@ -2318,6 +2516,64 @@ public interface LetaPackage extends EPackage
     EReference FORMULA_ITEM__TWA = eINSTANCE.getFormulaItem_Twa();
 
     /**
+     * The meta object literal for the '{@link org.leta.impl.MathOperatorImpl <em>Math Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.leta.impl.MathOperatorImpl
+     * @see org.leta.impl.LetaPackageImpl#getMathOperator()
+     * @generated
+     */
+    EClass MATH_OPERATOR = eINSTANCE.getMathOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Sum</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__SUM = eINSTANCE.getMathOperator_Sum();
+
+    /**
+     * The meta object literal for the '<em><b>Subtract</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__SUBTRACT = eINSTANCE.getMathOperator_Subtract();
+
+    /**
+     * The meta object literal for the '<em><b>Divide</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__DIVIDE = eINSTANCE.getMathOperator_Divide();
+
+    /**
+     * The meta object literal for the '<em><b>Multiply</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__MULTIPLY = eINSTANCE.getMathOperator_Multiply();
+
+    /**
+     * The meta object literal for the '<em><b>R</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__R = eINSTANCE.getMathOperator_R();
+
+    /**
+     * The meta object literal for the '<em><b>P</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MATH_OPERATOR__P = eINSTANCE.getMathOperator_P();
+
+    /**
      * The meta object literal for the '{@link org.leta.impl.RelationalOperatorImpl <em>Relational Operator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2336,12 +2592,30 @@ public interface LetaPackage extends EPackage
     EAttribute RELATIONAL_OPERATOR__O = eINSTANCE.getRelationalOperator_O();
 
     /**
-     * The meta object literal for the '<em><b>Neo</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Neo</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RELATIONAL_OPERATOR__NEO = eINSTANCE.getRelationalOperator_Neo();
+    EReference RELATIONAL_OPERATOR__NEO = eINSTANCE.getRelationalOperator_Neo();
+
+    /**
+     * The meta object literal for the '{@link org.leta.impl.NotEqualOperatorImpl <em>Not Equal Operator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.leta.impl.NotEqualOperatorImpl
+     * @see org.leta.impl.LetaPackageImpl#getNotEqualOperator()
+     * @generated
+     */
+    EClass NOT_EQUAL_OPERATOR = eINSTANCE.getNotEqualOperator();
+
+    /**
+     * The meta object literal for the '<em><b>Ne</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NOT_EQUAL_OPERATOR__NE = eINSTANCE.getNotEqualOperator_Ne();
 
     /**
      * The meta object literal for the '{@link org.leta.impl.SetImpl <em>Set</em>}' class.

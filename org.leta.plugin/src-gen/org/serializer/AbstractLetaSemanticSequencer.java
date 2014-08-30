@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.leta.Complement;
 import org.leta.Fact;
+import org.leta.FactComposite;
 import org.leta.FactExt;
 import org.leta.Formula;
 import org.leta.FormulaExpression;
@@ -22,6 +23,8 @@ import org.leta.FormulaItem;
 import org.leta.Leta;
 import org.leta.LetaPackage;
 import org.leta.List;
+import org.leta.MathOperator;
+import org.leta.NotEqualOperator;
 import org.leta.Quantifier;
 import org.leta.RelationalOperator;
 import org.leta.Set;
@@ -32,7 +35,6 @@ import org.leta.TermWithAssociation;
 import org.leta.TestCase;
 import org.leta.VerifyClause;
 import org.leta.WhenClause;
-import org.leta.factComposite;
 import org.services.LetaGrammarAccess;
 
 @SuppressWarnings("restriction")
@@ -75,6 +77,12 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case LetaPackage.FACT_COMPOSITE:
+				if(context == grammarAccess.getFactCompositeRule()) {
+					sequence_FactComposite(context, (FactComposite) semanticObject); 
+					return; 
+				}
+				else break;
 			case LetaPackage.FACT_EXT:
 				if(context == grammarAccess.getFactExtRule()) {
 					sequence_FactExt(context, (FactExt) semanticObject); 
@@ -108,6 +116,18 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 			case LetaPackage.LIST:
 				if(context == grammarAccess.getListRule()) {
 					sequence_List(context, (List) semanticObject); 
+					return; 
+				}
+				else break;
+			case LetaPackage.MATH_OPERATOR:
+				if(context == grammarAccess.getMathOperatorRule()) {
+					sequence_MathOperator(context, (MathOperator) semanticObject); 
+					return; 
+				}
+				else break;
+			case LetaPackage.NOT_EQUAL_OPERATOR:
+				if(context == grammarAccess.getNotEqualOperatorRule()) {
+					sequence_NotEqualOperator(context, (NotEqualOperator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -175,12 +195,6 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case LetaPackage.FACT_COMPOSITE:
-				if(context == grammarAccess.getFactCompositeRule()) {
-					sequence_factComposite(context, (factComposite) semanticObject); 
-					return; 
-				}
-				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -198,6 +212,15 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getComplementAccess().getIdIDTerminalRuleCall_0(), semanticObject.getId());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (((f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)?) | (fc1=FactComposite (op=LogicalOperator fc2=FactComposite)?))
+	 */
+	protected void sequence_FactComposite(EObject context, FactComposite semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -271,6 +294,38 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 	 */
 	protected void sequence_List(EObject context, List semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         sum='+' | 
+	 *         subtract='-' | 
+	 *         divide='/' | 
+	 *         multiply='*' | 
+	 *         r='%' | 
+	 *         p='**'
+	 *     )
+	 */
+	protected void sequence_MathOperator(EObject context, MathOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     ne='!='
+	 */
+	protected void sequence_NotEqualOperator(EObject context, NotEqualOperator semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, LetaPackage.Literals.NOT_EQUAL_OPERATOR__NE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LetaPackage.Literals.NOT_EQUAL_OPERATOR__NE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getNotEqualOperatorAccess().getNeExclamationMarkEqualsSignKeyword_0(), semanticObject.getNe());
+		feeder.finish();
 	}
 	
 	
@@ -367,7 +422,7 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     fc=factComposite
+	 *     fc=FactComposite
 	 */
 	protected void sequence_VerifyClause(EObject context, VerifyClause semanticObject) {
 		if(errorAcceptor != null) {
@@ -383,7 +438,7 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     fc=factComposite
+	 *     fc=FactComposite
 	 */
 	protected void sequence_WhenClause(EObject context, WhenClause semanticObject) {
 		if(errorAcceptor != null) {
@@ -394,14 +449,5 @@ public class AbstractLetaSemanticSequencer extends AbstractSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getWhenClauseAccess().getFcFactCompositeParserRuleCall_1_0(), semanticObject.getFc());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (((f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)?) | (fc1=factComposite (op=logicalOperator fc2=factComposite)?))
-	 */
-	protected void sequence_factComposite(EObject context, factComposite semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 }

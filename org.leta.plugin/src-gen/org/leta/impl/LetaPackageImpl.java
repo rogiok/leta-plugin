@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.leta.Complement;
 import org.leta.Fact;
+import org.leta.FactComposite;
 import org.leta.FactExt;
 import org.leta.Formula;
 import org.leta.FormulaExpression;
@@ -22,6 +23,8 @@ import org.leta.Leta;
 import org.leta.LetaFactory;
 import org.leta.LetaPackage;
 import org.leta.List;
+import org.leta.MathOperator;
+import org.leta.NotEqualOperator;
 import org.leta.Quantifier;
 import org.leta.RelationalOperator;
 import org.leta.Set;
@@ -33,7 +36,6 @@ import org.leta.TermWithAssociation;
 import org.leta.TestCase;
 import org.leta.VerifyClause;
 import org.leta.WhenClause;
-import org.leta.factComposite;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,7 +169,21 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass mathOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass relationalOperatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass notEqualOperatorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -381,7 +397,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getfactComposite()
+  public EClass getFactComposite()
   {
     return factCompositeEClass;
   }
@@ -391,7 +407,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getfactComposite_F()
+  public EReference getFactComposite_F()
   {
     return (EReference)factCompositeEClass.getEStructuralFeatures().get(0);
   }
@@ -401,7 +417,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getfactComposite_Fo()
+  public EReference getFactComposite_Fo()
   {
     return (EReference)factCompositeEClass.getEStructuralFeatures().get(1);
   }
@@ -411,7 +427,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getfactComposite_Op()
+  public EAttribute getFactComposite_Op()
   {
     return (EAttribute)factCompositeEClass.getEStructuralFeatures().get(2);
   }
@@ -421,7 +437,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getfactComposite_Fc()
+  public EReference getFactComposite_Fc()
   {
     return (EReference)factCompositeEClass.getEStructuralFeatures().get(3);
   }
@@ -431,7 +447,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getfactComposite_Fc1()
+  public EReference getFactComposite_Fc1()
   {
     return (EReference)factCompositeEClass.getEStructuralFeatures().get(4);
   }
@@ -441,7 +457,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getfactComposite_Fc2()
+  public EReference getFactComposite_Fc2()
   {
     return (EReference)factCompositeEClass.getEStructuralFeatures().get(5);
   }
@@ -631,9 +647,9 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTermInstance_NotEqualOperator()
+  public EReference getTermInstance_NotEqualOperator()
   {
-    return (EAttribute)termInstanceEClass.getEStructuralFeatures().get(1);
+    return (EReference)termInstanceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -821,9 +837,9 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFormulaExpression_Mo()
+  public EReference getFormulaExpression_Mo()
   {
-    return (EAttribute)formulaExpressionEClass.getEStructuralFeatures().get(1);
+    return (EReference)formulaExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -901,6 +917,76 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getMathOperator()
+  {
+    return mathOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_Sum()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_Subtract()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_Divide()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_Multiply()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_R()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMathOperator_P()
+  {
+    return (EAttribute)mathOperatorEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRelationalOperator()
   {
     return relationalOperatorEClass;
@@ -921,9 +1007,29 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRelationalOperator_Neo()
+  public EReference getRelationalOperator_Neo()
   {
-    return (EAttribute)relationalOperatorEClass.getEStructuralFeatures().get(1);
+    return (EReference)relationalOperatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getNotEqualOperator()
+  {
+    return notEqualOperatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getNotEqualOperator_Ne()
+  {
+    return (EAttribute)notEqualOperatorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1074,7 +1180,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
 
     termInstanceEClass = createEClass(TERM_INSTANCE);
     createEReference(termInstanceEClass, TERM_INSTANCE__TERM);
-    createEAttribute(termInstanceEClass, TERM_INSTANCE__NOT_EQUAL_OPERATOR);
+    createEReference(termInstanceEClass, TERM_INSTANCE__NOT_EQUAL_OPERATOR);
     createEAttribute(termInstanceEClass, TERM_INSTANCE__STRING_LITERAL);
     createEReference(termInstanceEClass, TERM_INSTANCE__RELATIONAL_OPERATOR);
     createEAttribute(termInstanceEClass, TERM_INSTANCE__OTHER_LITERAL);
@@ -1098,7 +1204,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
 
     formulaExpressionEClass = createEClass(FORMULA_EXPRESSION);
     createEReference(formulaExpressionEClass, FORMULA_EXPRESSION__FI);
-    createEAttribute(formulaExpressionEClass, FORMULA_EXPRESSION__MO);
+    createEReference(formulaExpressionEClass, FORMULA_EXPRESSION__MO);
     createEReference(formulaExpressionEClass, FORMULA_EXPRESSION__FE);
     createEReference(formulaExpressionEClass, FORMULA_EXPRESSION__FE1);
     createEReference(formulaExpressionEClass, FORMULA_EXPRESSION__FE2);
@@ -1108,9 +1214,20 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
     createEReference(formulaItemEClass, FORMULA_ITEM__TI);
     createEReference(formulaItemEClass, FORMULA_ITEM__TWA);
 
+    mathOperatorEClass = createEClass(MATH_OPERATOR);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__SUM);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__SUBTRACT);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__DIVIDE);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__MULTIPLY);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__R);
+    createEAttribute(mathOperatorEClass, MATH_OPERATOR__P);
+
     relationalOperatorEClass = createEClass(RELATIONAL_OPERATOR);
     createEAttribute(relationalOperatorEClass, RELATIONAL_OPERATOR__O);
-    createEAttribute(relationalOperatorEClass, RELATIONAL_OPERATOR__NEO);
+    createEReference(relationalOperatorEClass, RELATIONAL_OPERATOR__NEO);
+
+    notEqualOperatorEClass = createEClass(NOT_EQUAL_OPERATOR);
+    createEAttribute(notEqualOperatorEClass, NOT_EQUAL_OPERATOR__NE);
 
     setEClass = createEClass(SET);
     createEReference(setEClass, SET__S);
@@ -1165,20 +1282,20 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
     initEReference(getTestCase_S(), this.getSetClause(), null, "s", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyClauseEClass, VerifyClause.class, "VerifyClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVerifyClause_Fc(), this.getfactComposite(), null, "fc", null, 0, 1, VerifyClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVerifyClause_Fc(), this.getFactComposite(), null, "fc", null, 0, 1, VerifyClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whenClauseEClass, WhenClause.class, "WhenClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getWhenClause_Fc(), this.getfactComposite(), null, "fc", null, 0, 1, WhenClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWhenClause_Fc(), this.getFactComposite(), null, "fc", null, 0, 1, WhenClause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(setClauseEClass, SetClause.class, "SetClause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(factCompositeEClass, factComposite.class, "factComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getfactComposite_F(), this.getFact(), null, "f", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfactComposite_Fo(), this.getFormula(), null, "fo", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getfactComposite_Op(), ecorePackage.getEString(), "op", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfactComposite_Fc(), this.getfactComposite(), null, "fc", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfactComposite_Fc1(), this.getfactComposite(), null, "fc1", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getfactComposite_Fc2(), this.getfactComposite(), null, "fc2", null, 0, 1, factComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(factCompositeEClass, FactComposite.class, "FactComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFactComposite_F(), this.getFact(), null, "f", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFactComposite_Fo(), this.getFormula(), null, "fo", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFactComposite_Op(), ecorePackage.getEString(), "op", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFactComposite_Fc(), this.getFactComposite(), null, "fc", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFactComposite_Fc1(), this.getFactComposite(), null, "fc1", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFactComposite_Fc2(), this.getFactComposite(), null, "fc2", null, 0, 1, FactComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(factEClass, Fact.class, "Fact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFact_TermComposite(), this.getTermComposite(), null, "termComposite", null, 0, 1, Fact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1202,7 +1319,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
 
     initEClass(termInstanceEClass, TermInstance.class, "TermInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTermInstance_Term(), this.getTerm(), null, "term", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTermInstance_NotEqualOperator(), ecorePackage.getEString(), "notEqualOperator", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTermInstance_NotEqualOperator(), this.getNotEqualOperator(), null, "notEqualOperator", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTermInstance_StringLiteral(), ecorePackage.getEString(), "stringLiteral", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTermInstance_RelationalOperator(), this.getRelationalOperator(), null, "relationalOperator", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTermInstance_OtherLiteral(), ecorePackage.getEString(), "otherLiteral", null, 0, 1, TermInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1226,7 +1343,7 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
 
     initEClass(formulaExpressionEClass, FormulaExpression.class, "FormulaExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFormulaExpression_Fi(), this.getFormulaItem(), null, "fi", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaExpression_Mo(), ecorePackage.getEString(), "mo", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormulaExpression_Mo(), this.getMathOperator(), null, "mo", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormulaExpression_Fe(), this.getFormulaExpression(), null, "fe", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormulaExpression_Fe1(), this.getFormulaExpression(), null, "fe1", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormulaExpression_Fe2(), this.getFormulaExpression(), null, "fe2", null, 0, 1, FormulaExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1236,9 +1353,20 @@ public class LetaPackageImpl extends EPackageImpl implements LetaPackage
     initEReference(getFormulaItem_Ti(), this.getTermInstance(), null, "ti", null, 0, 1, FormulaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormulaItem_Twa(), this.getTermWithAssociation(), null, "twa", null, 0, 1, FormulaItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(mathOperatorEClass, MathOperator.class, "MathOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMathOperator_Sum(), ecorePackage.getEString(), "sum", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMathOperator_Subtract(), ecorePackage.getEString(), "subtract", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMathOperator_Divide(), ecorePackage.getEString(), "divide", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMathOperator_Multiply(), ecorePackage.getEString(), "multiply", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMathOperator_R(), ecorePackage.getEString(), "r", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMathOperator_P(), ecorePackage.getEString(), "p", null, 0, 1, MathOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(relationalOperatorEClass, RelationalOperator.class, "RelationalOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRelationalOperator_O(), ecorePackage.getEString(), "o", null, 0, 1, RelationalOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelationalOperator_Neo(), ecorePackage.getEString(), "neo", null, 0, 1, RelationalOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRelationalOperator_Neo(), this.getNotEqualOperator(), null, "neo", null, 0, 1, RelationalOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(notEqualOperatorEClass, NotEqualOperator.class, "NotEqualOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNotEqualOperator_Ne(), ecorePackage.getEString(), "ne", null, 0, 1, NotEqualOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(setEClass, Set.class, "Set", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSet_S(), this.getSet(), null, "s", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

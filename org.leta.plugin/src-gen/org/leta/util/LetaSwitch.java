@@ -112,8 +112,8 @@ public class LetaSwitch<T> extends Switch<T>
       }
       case LetaPackage.FACT_COMPOSITE:
       {
-        factComposite factComposite = (factComposite)theEObject;
-        T result = casefactComposite(factComposite);
+        FactComposite factComposite = (FactComposite)theEObject;
+        T result = caseFactComposite(factComposite);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -194,10 +194,24 @@ public class LetaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LetaPackage.MATH_OPERATOR:
+      {
+        MathOperator mathOperator = (MathOperator)theEObject;
+        T result = caseMathOperator(mathOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LetaPackage.RELATIONAL_OPERATOR:
       {
         RelationalOperator relationalOperator = (RelationalOperator)theEObject;
         T result = caseRelationalOperator(relationalOperator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LetaPackage.NOT_EQUAL_OPERATOR:
+      {
+        NotEqualOperator notEqualOperator = (NotEqualOperator)theEObject;
+        T result = caseNotEqualOperator(notEqualOperator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -301,17 +315,17 @@ public class LetaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>fact Composite</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Fact Composite</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>fact Composite</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Fact Composite</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casefactComposite(factComposite object)
+  public T caseFactComposite(FactComposite object)
   {
     return null;
   }
@@ -493,6 +507,22 @@ public class LetaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Math Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Math Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMathOperator(MathOperator object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Relational Operator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -504,6 +534,22 @@ public class LetaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRelationalOperator(RelationalOperator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not Equal Operator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not Equal Operator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNotEqualOperator(NotEqualOperator object)
   {
     return null;
   }

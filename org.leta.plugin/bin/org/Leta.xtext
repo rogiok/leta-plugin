@@ -9,19 +9,19 @@ TestCase:
 	'Test' id=ID v=VerifyClause w=WhenClause s=SetClause?;
 
 VerifyClause:
-	'Verify' fc=factComposite;
+	'Verify' fc=FactComposite;
 
 WhenClause:
-	'When' fc=factComposite;
+	'When' fc=FactComposite;
 
 SetClause:
 	{Set} 'Set' '{' s=Set? '}';
 
-factComposite:
-	(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)?
-	| '(' fc1=factComposite ')' (op=logicalOperator fc2=factComposite)?;
+FactComposite:
+	(f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)?
+	| '(' fc1=FactComposite ')' (op=LogicalOperator fc2=FactComposite)?;
 
-logicalOperator:
+LogicalOperator:
 	'And'
 	| 'Or';
 

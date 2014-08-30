@@ -10,6 +10,6 @@ public class LetaAntlrTokenFileProvider implements IAntlrTokenFileProvider {
 	
 	public InputStream getAntlrTokenFile() {
 		ClassLoader classLoader = getClass().getClassLoader();
-    	return classLoader.getResourceAsStream("org/parser/antlr/internal/InternalLeta.tokens");
+    	return classLoader.getResourceAsStream("org/parser/antlr/internal/InternalLetaParser.tokens");
 	}
 }

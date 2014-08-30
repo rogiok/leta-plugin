@@ -3,12 +3,12 @@ package org.validation;
 import org.eclipse.emf.ecore.impl.EStructuralFeatureImpl;
 import org.eclipse.xtext.validation.Check;
 import org.leta.Fact;
+import org.leta.FactComposite;
 import org.leta.FactExt;
 import org.leta.LetaPackage;
 import org.leta.TermComposite;
 import org.leta.TermInstance;
 import org.leta.VerifyClause;
-import org.leta.factComposite;
 
 public class LetaJavaValidator extends AbstractLetaJavaValidator {
     
@@ -38,13 +38,13 @@ public class LetaJavaValidator extends AbstractLetaJavaValidator {
 //	    warning("Name should start with a capital", LetaPackage.Literals.FACT__C, 10);
 //	}
 	
-	System.out.println("Fact");
+//	System.out.println("Fact");
     }
 
     @Check
     public void checkFactExt(FactExt factExt) {
 	
-	System.out.println("FactExt");
+//	System.out.println("FactExt");
 	
 	if (factExt.getTermComposite() == null) {
 	    error("The term is incorrect.", LetaPackage.Literals.FACT_EXT__TERM_COMPOSITE, 1, INCOMPLETE_TERM_COMPOSITE, "10");   
@@ -52,7 +52,7 @@ public class LetaJavaValidator extends AbstractLetaJavaValidator {
     }
 
     @Check
-    public void checkFactComposite(factComposite fact) {
+    public void checkFactComposite(FactComposite fact) {
     }
 
     @Check

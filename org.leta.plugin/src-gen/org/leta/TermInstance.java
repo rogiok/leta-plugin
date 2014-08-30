@@ -56,30 +56,30 @@ public interface TermInstance extends EObject
   void setTerm(Term value);
 
   /**
-   * Returns the value of the '<em><b>Not Equal Operator</b></em>' attribute.
+   * Returns the value of the '<em><b>Not Equal Operator</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Not Equal Operator</em>' attribute isn't clear,
+   * If the meaning of the '<em>Not Equal Operator</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Not Equal Operator</em>' attribute.
-   * @see #setNotEqualOperator(String)
+   * @return the value of the '<em>Not Equal Operator</em>' containment reference.
+   * @see #setNotEqualOperator(NotEqualOperator)
    * @see org.leta.LetaPackage#getTermInstance_NotEqualOperator()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getNotEqualOperator();
+  NotEqualOperator getNotEqualOperator();
 
   /**
-   * Sets the value of the '{@link org.leta.TermInstance#getNotEqualOperator <em>Not Equal Operator</em>}' attribute.
+   * Sets the value of the '{@link org.leta.TermInstance#getNotEqualOperator <em>Not Equal Operator</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Not Equal Operator</em>' attribute.
+   * @param value the new value of the '<em>Not Equal Operator</em>' containment reference.
    * @see #getNotEqualOperator()
    * @generated
    */
-  void setNotEqualOperator(String value);
+  void setNotEqualOperator(NotEqualOperator value);
 
   /**
    * Returns the value of the '<em><b>String Literal</b></em>' attribute.

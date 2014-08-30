@@ -72,7 +72,7 @@ public class LetaFactoryImpl extends EFactoryImpl implements LetaFactory
       case LetaPackage.VERIFY_CLAUSE: return createVerifyClause();
       case LetaPackage.WHEN_CLAUSE: return createWhenClause();
       case LetaPackage.SET_CLAUSE: return createSetClause();
-      case LetaPackage.FACT_COMPOSITE: return createfactComposite();
+      case LetaPackage.FACT_COMPOSITE: return createFactComposite();
       case LetaPackage.FACT: return createFact();
       case LetaPackage.FACT_EXT: return createFactExt();
       case LetaPackage.TERM_COMPOSITE: return createTermComposite();
@@ -84,7 +84,9 @@ public class LetaFactoryImpl extends EFactoryImpl implements LetaFactory
       case LetaPackage.FORMULA: return createFormula();
       case LetaPackage.FORMULA_EXPRESSION: return createFormulaExpression();
       case LetaPackage.FORMULA_ITEM: return createFormulaItem();
+      case LetaPackage.MATH_OPERATOR: return createMathOperator();
       case LetaPackage.RELATIONAL_OPERATOR: return createRelationalOperator();
+      case LetaPackage.NOT_EQUAL_OPERATOR: return createNotEqualOperator();
       case LetaPackage.SET: return createSet();
       case LetaPackage.LIST: return createList();
       default:
@@ -152,9 +154,9 @@ public class LetaFactoryImpl extends EFactoryImpl implements LetaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public factComposite createfactComposite()
+  public FactComposite createFactComposite()
   {
-    factCompositeImpl factComposite = new factCompositeImpl();
+    FactCompositeImpl factComposite = new FactCompositeImpl();
     return factComposite;
   }
 
@@ -284,10 +286,32 @@ public class LetaFactoryImpl extends EFactoryImpl implements LetaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public MathOperator createMathOperator()
+  {
+    MathOperatorImpl mathOperator = new MathOperatorImpl();
+    return mathOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public RelationalOperator createRelationalOperator()
   {
     RelationalOperatorImpl relationalOperator = new RelationalOperatorImpl();
     return relationalOperator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotEqualOperator createNotEqualOperator()
+  {
+    NotEqualOperatorImpl notEqualOperator = new NotEqualOperatorImpl();
+    return notEqualOperator;
   }
 
   /**

@@ -6,13 +6,16 @@
 package org.leta.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.leta.LetaPackage;
+import org.leta.NotEqualOperator;
 import org.leta.RelationalOperator;
 
 /**
@@ -52,24 +55,14 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
   protected String o = O_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getNeo() <em>Neo</em>}' attribute.
+   * The cached value of the '{@link #getNeo() <em>Neo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNeo()
    * @generated
    * @ordered
    */
-  protected static final String NEO_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getNeo() <em>Neo</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNeo()
-   * @generated
-   * @ordered
-   */
-  protected String neo = NEO_EDEFAULT;
+  protected NotEqualOperator neo;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +113,7 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getNeo()
+  public NotEqualOperator getNeo()
   {
     return neo;
   }
@@ -130,12 +123,53 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setNeo(String newNeo)
+  public NotificationChain basicSetNeo(NotEqualOperator newNeo, NotificationChain msgs)
   {
-    String oldNeo = neo;
+    NotEqualOperator oldNeo = neo;
     neo = newNeo;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.RELATIONAL_OPERATOR__NEO, oldNeo, neo));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LetaPackage.RELATIONAL_OPERATOR__NEO, oldNeo, newNeo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNeo(NotEqualOperator newNeo)
+  {
+    if (newNeo != neo)
+    {
+      NotificationChain msgs = null;
+      if (neo != null)
+        msgs = ((InternalEObject)neo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LetaPackage.RELATIONAL_OPERATOR__NEO, null, msgs);
+      if (newNeo != null)
+        msgs = ((InternalEObject)newNeo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LetaPackage.RELATIONAL_OPERATOR__NEO, null, msgs);
+      msgs = basicSetNeo(newNeo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.RELATIONAL_OPERATOR__NEO, newNeo, newNeo));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LetaPackage.RELATIONAL_OPERATOR__NEO:
+        return basicSetNeo(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -170,7 +204,7 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
         setO((String)newValue);
         return;
       case LetaPackage.RELATIONAL_OPERATOR__NEO:
-        setNeo((String)newValue);
+        setNeo((NotEqualOperator)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -190,7 +224,7 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
         setO(O_EDEFAULT);
         return;
       case LetaPackage.RELATIONAL_OPERATOR__NEO:
-        setNeo(NEO_EDEFAULT);
+        setNeo((NotEqualOperator)null);
         return;
     }
     super.eUnset(featureID);
@@ -209,7 +243,7 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
       case LetaPackage.RELATIONAL_OPERATOR__O:
         return O_EDEFAULT == null ? o != null : !O_EDEFAULT.equals(o);
       case LetaPackage.RELATIONAL_OPERATOR__NEO:
-        return NEO_EDEFAULT == null ? neo != null : !NEO_EDEFAULT.equals(neo);
+        return neo != null;
     }
     return super.eIsSet(featureID);
   }
@@ -227,8 +261,6 @@ public class RelationalOperatorImpl extends MinimalEObjectImpl.Container impleme
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (o: ");
     result.append(o);
-    result.append(", neo: ");
-    result.append(neo);
     result.append(')');
     return result.toString();
   }

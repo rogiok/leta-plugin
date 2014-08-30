@@ -18,24 +18,24 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VerifyClause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//factComposite"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//FactComposite"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhenClause">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//factComposite"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//FactComposite"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SetClause"/>
-  <eClassifiers xsi:type="ecore:EClass" name="factComposite">
+  <eClassifiers xsi:type="ecore:EClass" name="FactComposite">
     <eStructuralFeatures xsi:type="ecore:EReference" name="f" eType="#//Fact" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fo" eType="#//Formula"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//factComposite"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fc" eType="#//FactComposite"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fc1" eType="#//factComposite"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fc1" eType="#//FactComposite"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fc2" eType="#//factComposite"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fc2" eType="#//FactComposite"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fact">
@@ -70,7 +70,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TermInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="term" eType="#//Term" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notEqualOperator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="notEqualOperator" eType="#//NotEqualOperator"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringLiteral" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationalOperator" eType="#//RelationalOperator"
         containment="true"/>
@@ -99,7 +100,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="FormulaExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="fi" eType="#//FormulaItem"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mo" eType="#//MathOperator"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fe" eType="#//FormulaExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fe1" eType="#//FormulaExpression"
@@ -114,9 +116,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="twa" eType="#//TermWithAssociation"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MathOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subtract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="divide" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiply" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="p" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationalOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="o" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="neo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="neo" eType="#//NotEqualOperator"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotEqualOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Set" eSuperTypes="#//SetClause">
     <eStructuralFeatures xsi:type="ecore:EReference" name="s" eType="#//Set" containment="true"/>

@@ -11,5 +11,6 @@ class LetaGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		//TODO implement me
+		
 	}
 }

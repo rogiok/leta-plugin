@@ -56,30 +56,30 @@ public interface FormulaExpression extends EObject
   void setFi(FormulaItem value);
 
   /**
-   * Returns the value of the '<em><b>Mo</b></em>' attribute.
+   * Returns the value of the '<em><b>Mo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Mo</em>' attribute isn't clear,
+   * If the meaning of the '<em>Mo</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Mo</em>' attribute.
-   * @see #setMo(String)
+   * @return the value of the '<em>Mo</em>' containment reference.
+   * @see #setMo(MathOperator)
    * @see org.leta.LetaPackage#getFormulaExpression_Mo()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getMo();
+  MathOperator getMo();
 
   /**
-   * Sets the value of the '{@link org.leta.FormulaExpression#getMo <em>Mo</em>}' attribute.
+   * Sets the value of the '{@link org.leta.FormulaExpression#getMo <em>Mo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Mo</em>' attribute.
+   * @param value the new value of the '<em>Mo</em>' containment reference.
    * @see #getMo()
    * @generated
    */
-  void setMo(String value);
+  void setMo(MathOperator value);
 
   /**
    * Returns the value of the '<em><b>Fe</b></em>' containment reference.

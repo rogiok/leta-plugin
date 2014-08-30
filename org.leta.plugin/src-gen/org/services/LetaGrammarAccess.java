@@ -101,19 +101,19 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFcFactCompositeParserRuleCall_1_0 = (RuleCall)cFcAssignment_1.eContents().get(0);
 		
 		//VerifyClause:
-		//	"Verify" fc=factComposite;
+		//	"verify" fc=FactComposite;
 		public ParserRule getRule() { return rule; }
 
-		//"Verify" fc=factComposite
+		//"verify" fc=FactComposite
 		public Group getGroup() { return cGroup; }
 
-		//"Verify"
+		//"verify"
 		public Keyword getVerifyKeyword_0() { return cVerifyKeyword_0; }
 
-		//fc=factComposite
+		//fc=FactComposite
 		public Assignment getFcAssignment_1() { return cFcAssignment_1; }
 
-		//factComposite
+		//FactComposite
 		public RuleCall getFcFactCompositeParserRuleCall_1_0() { return cFcFactCompositeParserRuleCall_1_0; }
 	}
 
@@ -125,19 +125,19 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFcFactCompositeParserRuleCall_1_0 = (RuleCall)cFcAssignment_1.eContents().get(0);
 		
 		//WhenClause:
-		//	"When" fc=factComposite;
+		//	"when" fc=FactComposite;
 		public ParserRule getRule() { return rule; }
 
-		//"When" fc=factComposite
+		//"when" fc=FactComposite
 		public Group getGroup() { return cGroup; }
 
-		//"When"
+		//"when"
 		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
 
-		//fc=factComposite
+		//fc=FactComposite
 		public Assignment getFcAssignment_1() { return cFcAssignment_1; }
 
-		//factComposite
+		//FactComposite
 		public RuleCall getFcFactCompositeParserRuleCall_1_0() { return cFcFactCompositeParserRuleCall_1_0; }
 	}
 
@@ -152,16 +152,16 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//SetClause:
-		//	{Set} "Set" "{" s=Set? "}";
+		//	{Set} "set" "{" s=Set? "}";
 		public ParserRule getRule() { return rule; }
 
-		//{Set} "Set" "{" s=Set? "}"
+		//{Set} "set" "{" s=Set? "}"
 		public Group getGroup() { return cGroup; }
 
 		//{Set}
 		public Action getSetAction_0() { return cSetAction_0; }
 
-		//"Set"
+		//"set"
 		public Keyword getSetKeyword_1() { return cSetKeyword_1; }
 
 		//"{"
@@ -178,7 +178,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	public class FactCompositeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "factComposite");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FactComposite");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
@@ -202,16 +202,16 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFc2Assignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
 		private final RuleCall cFc2FactCompositeParserRuleCall_1_3_1_0 = (RuleCall)cFc2Assignment_1_3_1.eContents().get(0);
 		
-		//factComposite:
-		//	(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)? | "(" fc1=factComposite ")" (op=logicalOperator
-		//	fc2=factComposite)?;
+		//FactComposite:
+		//	(f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)? | "(" fc1=FactComposite ")" (op=LogicalOperator
+		//	fc2=FactComposite)?;
 		public ParserRule getRule() { return rule; }
 
-		//(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)? | "(" fc1=factComposite ")" (op=logicalOperator
-		//fc2=factComposite)?
+		//(f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)? | "(" fc1=FactComposite ")" (op=LogicalOperator
+		//fc2=FactComposite)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)?
+		//(f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)?
 		public Group getGroup_0() { return cGroup_0; }
 
 		//f=Fact | fo=Formula
@@ -229,69 +229,69 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		//Formula
 		public RuleCall getFoFormulaParserRuleCall_0_0_1_0() { return cFoFormulaParserRuleCall_0_0_1_0; }
 
-		//(op=logicalOperator fc=factComposite)?
+		//(op=LogicalOperator fc=FactComposite)?
 		public Group getGroup_0_1() { return cGroup_0_1; }
 
-		//op=logicalOperator
+		//op=LogicalOperator
 		public Assignment getOpAssignment_0_1_0() { return cOpAssignment_0_1_0; }
 
-		//logicalOperator
+		//LogicalOperator
 		public RuleCall getOpLogicalOperatorParserRuleCall_0_1_0_0() { return cOpLogicalOperatorParserRuleCall_0_1_0_0; }
 
-		//fc=factComposite
+		//fc=FactComposite
 		public Assignment getFcAssignment_0_1_1() { return cFcAssignment_0_1_1; }
 
-		//factComposite
+		//FactComposite
 		public RuleCall getFcFactCompositeParserRuleCall_0_1_1_0() { return cFcFactCompositeParserRuleCall_0_1_1_0; }
 
-		//"(" fc1=factComposite ")" (op=logicalOperator fc2=factComposite)?
+		//"(" fc1=FactComposite ")" (op=LogicalOperator fc2=FactComposite)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
 
-		//fc1=factComposite
+		//fc1=FactComposite
 		public Assignment getFc1Assignment_1_1() { return cFc1Assignment_1_1; }
 
-		//factComposite
+		//FactComposite
 		public RuleCall getFc1FactCompositeParserRuleCall_1_1_0() { return cFc1FactCompositeParserRuleCall_1_1_0; }
 
 		//")"
 		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
 
-		//(op=logicalOperator fc2=factComposite)?
+		//(op=LogicalOperator fc2=FactComposite)?
 		public Group getGroup_1_3() { return cGroup_1_3; }
 
-		//op=logicalOperator
+		//op=LogicalOperator
 		public Assignment getOpAssignment_1_3_0() { return cOpAssignment_1_3_0; }
 
-		//logicalOperator
+		//LogicalOperator
 		public RuleCall getOpLogicalOperatorParserRuleCall_1_3_0_0() { return cOpLogicalOperatorParserRuleCall_1_3_0_0; }
 
-		//fc2=factComposite
+		//fc2=FactComposite
 		public Assignment getFc2Assignment_1_3_1() { return cFc2Assignment_1_3_1; }
 
-		//factComposite
+		//FactComposite
 		public RuleCall getFc2FactCompositeParserRuleCall_1_3_1_0() { return cFc2FactCompositeParserRuleCall_1_3_1_0; }
 	}
 
 	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "logicalOperator");
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LogicalOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cAndKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cOrKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
-		//logicalOperator:
-		//	"And" | "Or";
+		//LogicalOperator:
+		//	"and" | "or";
 		public ParserRule getRule() { return rule; }
 
-		//"And" | "Or"
+		//"and" | "or"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"And"
+		//"and"
 		public Keyword getAndKeyword_0() { return cAndKeyword_0; }
 
-		//"Or"
+		//"or"
 		public Keyword getOrKeyword_1() { return cOrKeyword_1; }
 	}
 
@@ -561,11 +561,11 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Quantifier");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cAtLeastKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cAtleastKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cVAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cVINTTerminalRuleCall_0_1_0 = (RuleCall)cVAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cAtMostKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cAtmostKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cVAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cVINTTerminalRuleCall_1_1_0 = (RuleCall)cVAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
@@ -573,24 +573,24 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cVINTTerminalRuleCall_2_1_0 = (RuleCall)cVAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Keyword cAtLeastAndAtMostKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cAtleastandatmostKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cV1Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cV1INTTerminalRuleCall_3_1_0 = (RuleCall)cV1Assignment_3_1.eContents().get(0);
 		private final Assignment cV2Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cV2INTTerminalRuleCall_3_2_0 = (RuleCall)cV2Assignment_3_2.eContents().get(0);
 		
 		//Quantifier:
-		//	"atLeast" v=INT | "atMost" v=INT | "exactly" v=INT | "atLeastAndAtMost" v1=INT v2=INT;
+		//	"atleast" v=INT | "atmost" v=INT | "exactly" v=INT | "atleastandatmost" v1=INT v2=INT;
 		public ParserRule getRule() { return rule; }
 
-		//"atLeast" v=INT | "atMost" v=INT | "exactly" v=INT | "atLeastAndAtMost" v1=INT v2=INT
+		//"atleast" v=INT | "atmost" v=INT | "exactly" v=INT | "atleastandatmost" v1=INT v2=INT
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"atLeast" v=INT
+		//"atleast" v=INT
 		public Group getGroup_0() { return cGroup_0; }
 
-		//"atLeast"
-		public Keyword getAtLeastKeyword_0_0() { return cAtLeastKeyword_0_0; }
+		//"atleast"
+		public Keyword getAtleastKeyword_0_0() { return cAtleastKeyword_0_0; }
 
 		//v=INT
 		public Assignment getVAssignment_0_1() { return cVAssignment_0_1; }
@@ -598,11 +598,11 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getVINTTerminalRuleCall_0_1_0() { return cVINTTerminalRuleCall_0_1_0; }
 
-		//"atMost" v=INT
+		//"atmost" v=INT
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"atMost"
-		public Keyword getAtMostKeyword_1_0() { return cAtMostKeyword_1_0; }
+		//"atmost"
+		public Keyword getAtmostKeyword_1_0() { return cAtmostKeyword_1_0; }
 
 		//v=INT
 		public Assignment getVAssignment_1_1() { return cVAssignment_1_1; }
@@ -622,11 +622,11 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getVINTTerminalRuleCall_2_1_0() { return cVINTTerminalRuleCall_2_1_0; }
 
-		//"atLeastAndAtMost" v1=INT v2=INT
+		//"atleastandatmost" v1=INT v2=INT
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"atLeastAndAtMost"
-		public Keyword getAtLeastAndAtMostKeyword_3_0() { return cAtLeastAndAtMostKeyword_3_0; }
+		//"atleastandatmost"
+		public Keyword getAtleastandatmostKeyword_3_0() { return cAtleastandatmostKeyword_3_0; }
 
 		//v1=INT
 		public Assignment getV1Assignment_3_1() { return cV1Assignment_3_1; }
@@ -814,37 +814,61 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	public class MathOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MathOperator");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cSolidusKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cAsteriskKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cPercentSignKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cAsteriskAsteriskKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Assignment cSumAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cSumPlusSignKeyword_0_0 = (Keyword)cSumAssignment_0.eContents().get(0);
+		private final Assignment cSubtractAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Keyword cSubtractHyphenMinusKeyword_1_0 = (Keyword)cSubtractAssignment_1.eContents().get(0);
+		private final Assignment cDivideAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final Keyword cDivideSolidusKeyword_2_0 = (Keyword)cDivideAssignment_2.eContents().get(0);
+		private final Assignment cMultiplyAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final Keyword cMultiplyAsteriskKeyword_3_0 = (Keyword)cMultiplyAssignment_3.eContents().get(0);
+		private final Assignment cRAssignment_4 = (Assignment)cAlternatives.eContents().get(4);
+		private final Keyword cRPercentSignKeyword_4_0 = (Keyword)cRAssignment_4.eContents().get(0);
+		private final Assignment cPAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
+		private final Keyword cPAsteriskAsteriskKeyword_5_0 = (Keyword)cPAssignment_5.eContents().get(0);
 		
 		//MathOperator:
-		//	"+" | "-" | "/" | "*" | "%" | "**";
+		//	sum="+" | subtract="-" | divide="/" | multiply="*" | r="%" | p="**";
 		public ParserRule getRule() { return rule; }
 
-		//"+" | "-" | "/" | "*" | "%" | "**"
+		//sum="+" | subtract="-" | divide="/" | multiply="*" | r="%" | p="**"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//sum="+"
+		public Assignment getSumAssignment_0() { return cSumAssignment_0; }
+
 		//"+"
-		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
+		public Keyword getSumPlusSignKeyword_0_0() { return cSumPlusSignKeyword_0_0; }
+
+		//subtract="-"
+		public Assignment getSubtractAssignment_1() { return cSubtractAssignment_1; }
 
 		//"-"
-		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		public Keyword getSubtractHyphenMinusKeyword_1_0() { return cSubtractHyphenMinusKeyword_1_0; }
+
+		//divide="/"
+		public Assignment getDivideAssignment_2() { return cDivideAssignment_2; }
 
 		//"/"
-		public Keyword getSolidusKeyword_2() { return cSolidusKeyword_2; }
+		public Keyword getDivideSolidusKeyword_2_0() { return cDivideSolidusKeyword_2_0; }
+
+		//multiply="*"
+		public Assignment getMultiplyAssignment_3() { return cMultiplyAssignment_3; }
 
 		//"*"
-		public Keyword getAsteriskKeyword_3() { return cAsteriskKeyword_3; }
+		public Keyword getMultiplyAsteriskKeyword_3_0() { return cMultiplyAsteriskKeyword_3_0; }
+
+		//r="%"
+		public Assignment getRAssignment_4() { return cRAssignment_4; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_4() { return cPercentSignKeyword_4; }
+		public Keyword getRPercentSignKeyword_4_0() { return cRPercentSignKeyword_4_0; }
+
+		//p="**"
+		public Assignment getPAssignment_5() { return cPAssignment_5; }
 
 		//"**"
-		public Keyword getAsteriskAsteriskKeyword_5() { return cAsteriskAsteriskKeyword_5; }
+		public Keyword getPAsteriskAsteriskKeyword_5_0() { return cPAsteriskAsteriskKeyword_5_0; }
 	}
 
 	public class RelationalOperatorElements extends AbstractParserRuleElementFinder {
@@ -901,14 +925,18 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class NotEqualOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "NotEqualOperator");
-		private final Keyword cExclamationMarkEqualsSignKeyword = (Keyword)rule.eContents().get(1);
+		private final Assignment cNeAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cNeExclamationMarkEqualsSignKeyword_0 = (Keyword)cNeAssignment.eContents().get(0);
 		
 		//NotEqualOperator:
-		//	"!=";
+		//	ne="!=";
 		public ParserRule getRule() { return rule; }
 
+		//ne="!="
+		public Assignment getNeAssignment() { return cNeAssignment; }
+
 		//"!="
-		public Keyword getExclamationMarkEqualsSignKeyword() { return cExclamationMarkEqualsSignKeyword; }
+		public Keyword getNeExclamationMarkEqualsSignKeyword_0() { return cNeExclamationMarkEqualsSignKeyword_0; }
 	}
 
 	public class SetElements extends AbstractParserRuleElementFinder {
@@ -1065,13 +1093,13 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		
 		//TestPackage:
-		//	"Package" ID ("." ID)*;
+		//	"package" ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
-		//"Package" ID ("." ID)*
+		//"package" ID ("." ID)*
 		public Group getGroup() { return cGroup; }
 
-		//"Package"
+		//"package"
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 
 		//ID
@@ -1162,7 +1190,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//VerifyClause:
-	//	"Verify" fc=factComposite;
+	//	"verify" fc=FactComposite;
 	public VerifyClauseElements getVerifyClauseAccess() {
 		return (pVerifyClause != null) ? pVerifyClause : (pVerifyClause = new VerifyClauseElements());
 	}
@@ -1172,7 +1200,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//WhenClause:
-	//	"When" fc=factComposite;
+	//	"when" fc=FactComposite;
 	public WhenClauseElements getWhenClauseAccess() {
 		return (pWhenClause != null) ? pWhenClause : (pWhenClause = new WhenClauseElements());
 	}
@@ -1182,7 +1210,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SetClause:
-	//	{Set} "Set" "{" s=Set? "}";
+	//	{Set} "set" "{" s=Set? "}";
 	public SetClauseElements getSetClauseAccess() {
 		return (pSetClause != null) ? pSetClause : (pSetClause = new SetClauseElements());
 	}
@@ -1191,9 +1219,9 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		return getSetClauseAccess().getRule();
 	}
 
-	//factComposite:
-	//	(f=Fact | fo=Formula) (op=logicalOperator fc=factComposite)? | "(" fc1=factComposite ")" (op=logicalOperator
-	//	fc2=factComposite)?;
+	//FactComposite:
+	//	(f=Fact | fo=Formula) (op=LogicalOperator fc=FactComposite)? | "(" fc1=FactComposite ")" (op=LogicalOperator
+	//	fc2=FactComposite)?;
 	public FactCompositeElements getFactCompositeAccess() {
 		return (pFactComposite != null) ? pFactComposite : (pFactComposite = new FactCompositeElements());
 	}
@@ -1202,8 +1230,8 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 		return getFactCompositeAccess().getRule();
 	}
 
-	//logicalOperator:
-	//	"And" | "Or";
+	//LogicalOperator:
+	//	"and" | "or";
 	public LogicalOperatorElements getLogicalOperatorAccess() {
 		return (pLogicalOperator != null) ? pLogicalOperator : (pLogicalOperator = new LogicalOperatorElements());
 	}
@@ -1274,7 +1302,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Quantifier:
-	//	"atLeast" v=INT | "atMost" v=INT | "exactly" v=INT | "atLeastAndAtMost" v1=INT v2=INT;
+	//	"atleast" v=INT | "atmost" v=INT | "exactly" v=INT | "atleastandatmost" v1=INT v2=INT;
 	public QuantifierElements getQuantifierAccess() {
 		return (pQuantifier != null) ? pQuantifier : (pQuantifier = new QuantifierElements());
 	}
@@ -1325,7 +1353,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MathOperator:
-	//	"+" | "-" | "/" | "*" | "%" | "**";
+	//	sum="+" | subtract="-" | divide="/" | multiply="*" | r="%" | p="**";
 	public MathOperatorElements getMathOperatorAccess() {
 		return (pMathOperator != null) ? pMathOperator : (pMathOperator = new MathOperatorElements());
 	}
@@ -1345,7 +1373,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//NotEqualOperator:
-	//	"!=";
+	//	ne="!=";
 	public NotEqualOperatorElements getNotEqualOperatorAccess() {
 		return (pNotEqualOperator != null) ? pNotEqualOperator : (pNotEqualOperator = new NotEqualOperatorElements());
 	}
@@ -1395,7 +1423,7 @@ public class LetaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TestPackage:
-	//	"Package" ID ("." ID)*;
+	//	"package" ID ("." ID)*;
 	public TestPackageElements getTestPackageAccess() {
 		return (pTestPackage != null) ? pTestPackage : (pTestPackage = new TestPackageElements());
 	}

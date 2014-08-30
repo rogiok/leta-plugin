@@ -3,12 +3,71 @@
 */
 package org.ui.outline;
 
+import java.util.List;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
+import org.eclipse.xtext.ui.editor.outline.impl.EObjectNode;
+import org.eclipse.xtext.ui.editor.outline.impl.EStructuralFeatureNode;
+import org.leta.TestCase;
+import org.leta.VerifyClause;
+import org.leta.WhenClause;
 
 /**
  * customization of the default outline structure
  * 
  */
 public class LetaOutlineTreeProvider extends DefaultOutlineTreeProvider {
+
+    @Override
+    protected void _createChildren(DocumentRootNode parentNode, EObject modelElement) {
+	super._createChildren(parentNode, modelElement);
+    }
+
+    @Override
+    protected void _createChildren(IOutlineNode parentNode, EObject modelElement) {
+	super._createChildren(parentNode, modelElement);
+    }
+
+    @Override
+    protected void _createChildren(EStructuralFeatureNode parentNode, EObject modelElement) {
+	super._createChildren(parentNode, modelElement);
+    }
+
+    @Override
+    protected void _createNode(IOutlineNode parentNode, EObject modelElement) {
+
+	if (modelElement.eClass().getInstanceClass() == VerifyClause.class) {
+//	    modelElement.
+	    
+//	    EObjectNode child = this.findChildInParentNode(parentNode, VerifyClause.class);
+//	    child.setText("Verify");
+	} else if (modelElement.eClass().getInstanceClass() == WhenClause.class) {
+//	    EObjectNode child = this.findChildInParentNode(parentNode, WhenClause.class);
+//	    child.setText("When");
+	}
 	
+	super._createNode(parentNode, modelElement);
+    }
+    
+    private EObjectNode findChildInParentNode(IOutlineNode parentNode, Class<?> clazz) {
+	
+	for (IOutlineNode child : parentNode.getChildren()) {
+	    EObjectNode objectNode = null;
+		
+	    if (child instanceof EObjectNode) {
+		objectNode = (EObjectNode) child;
+		
+		if (objectNode.getEClass().getInstanceClass() == clazz) {
+		    return objectNode;
+		}
+
+	    }
+	}
+	
+	return null;
+    }
+
 }

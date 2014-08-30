@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.leta.FormulaExpression;
 import org.leta.FormulaItem;
 import org.leta.LetaPackage;
+import org.leta.MathOperator;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,24 +49,14 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
   protected FormulaItem fi;
 
   /**
-   * The default value of the '{@link #getMo() <em>Mo</em>}' attribute.
+   * The cached value of the '{@link #getMo() <em>Mo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMo()
    * @generated
    * @ordered
    */
-  protected static final String MO_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMo() <em>Mo</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMo()
-   * @generated
-   * @ordered
-   */
-  protected String mo = MO_EDEFAULT;
+  protected MathOperator mo;
 
   /**
    * The cached value of the '{@link #getFe() <em>Fe</em>}' containment reference.
@@ -171,7 +162,7 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMo()
+  public MathOperator getMo()
   {
     return mo;
   }
@@ -181,12 +172,37 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMo(String newMo)
+  public NotificationChain basicSetMo(MathOperator newMo, NotificationChain msgs)
   {
-    String oldMo = mo;
+    MathOperator oldMo = mo;
     mo = newMo;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.FORMULA_EXPRESSION__MO, oldMo, mo));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LetaPackage.FORMULA_EXPRESSION__MO, oldMo, newMo);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMo(MathOperator newMo)
+  {
+    if (newMo != mo)
+    {
+      NotificationChain msgs = null;
+      if (mo != null)
+        msgs = ((InternalEObject)mo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LetaPackage.FORMULA_EXPRESSION__MO, null, msgs);
+      if (newMo != null)
+        msgs = ((InternalEObject)newMo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LetaPackage.FORMULA_EXPRESSION__MO, null, msgs);
+      msgs = basicSetMo(newMo, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LetaPackage.FORMULA_EXPRESSION__MO, newMo, newMo));
   }
 
   /**
@@ -345,6 +361,8 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
     {
       case LetaPackage.FORMULA_EXPRESSION__FI:
         return basicSetFi(null, msgs);
+      case LetaPackage.FORMULA_EXPRESSION__MO:
+        return basicSetMo(null, msgs);
       case LetaPackage.FORMULA_EXPRESSION__FE:
         return basicSetFe(null, msgs);
       case LetaPackage.FORMULA_EXPRESSION__FE1:
@@ -393,7 +411,7 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
         setFi((FormulaItem)newValue);
         return;
       case LetaPackage.FORMULA_EXPRESSION__MO:
-        setMo((String)newValue);
+        setMo((MathOperator)newValue);
         return;
       case LetaPackage.FORMULA_EXPRESSION__FE:
         setFe((FormulaExpression)newValue);
@@ -422,7 +440,7 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
         setFi((FormulaItem)null);
         return;
       case LetaPackage.FORMULA_EXPRESSION__MO:
-        setMo(MO_EDEFAULT);
+        setMo((MathOperator)null);
         return;
       case LetaPackage.FORMULA_EXPRESSION__FE:
         setFe((FormulaExpression)null);
@@ -450,7 +468,7 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
       case LetaPackage.FORMULA_EXPRESSION__FI:
         return fi != null;
       case LetaPackage.FORMULA_EXPRESSION__MO:
-        return MO_EDEFAULT == null ? mo != null : !MO_EDEFAULT.equals(mo);
+        return mo != null;
       case LetaPackage.FORMULA_EXPRESSION__FE:
         return fe != null;
       case LetaPackage.FORMULA_EXPRESSION__FE1:
@@ -459,23 +477,6 @@ public class FormulaExpressionImpl extends MinimalEObjectImpl.Container implemen
         return fe2 != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (mo: ");
-    result.append(mo);
-    result.append(')');
-    return result.toString();
   }
 
 } //FormulaExpressionImpl

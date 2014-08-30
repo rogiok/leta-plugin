@@ -53,29 +53,29 @@ public interface RelationalOperator extends EObject
   void setO(String value);
 
   /**
-   * Returns the value of the '<em><b>Neo</b></em>' attribute.
+   * Returns the value of the '<em><b>Neo</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Neo</em>' attribute isn't clear,
+   * If the meaning of the '<em>Neo</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Neo</em>' attribute.
-   * @see #setNeo(String)
+   * @return the value of the '<em>Neo</em>' containment reference.
+   * @see #setNeo(NotEqualOperator)
    * @see org.leta.LetaPackage#getRelationalOperator_Neo()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getNeo();
+  NotEqualOperator getNeo();
 
   /**
-   * Sets the value of the '{@link org.leta.RelationalOperator#getNeo <em>Neo</em>}' attribute.
+   * Sets the value of the '{@link org.leta.RelationalOperator#getNeo <em>Neo</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Neo</em>' attribute.
+   * @param value the new value of the '<em>Neo</em>' containment reference.
    * @see #getNeo()
    * @generated
    */
-  void setNeo(String value);
+  void setNeo(NotEqualOperator value);
 
 } // RelationalOperator
